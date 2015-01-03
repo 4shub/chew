@@ -7,5 +7,5 @@ Details
 ==
 Chew was built in a few hours and is a demonstration of this. The process was rushed but it should provide some people with better insights into build a platform with Stripe and Twitter integration.
 
-Have fun,
-Shubham
+Have fun, <br>
+Shub
