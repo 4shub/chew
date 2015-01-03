@@ -1,0 +1,42 @@
+extends layout
+
+block content
+	.content-container.ce
+		.order-header
+			a(href='/')
+				.order-logo
+		.header-user
+				div.header-username= udata.name 
+				img.header-userimage(src= udata.image ) 
+				div.hex-bottom  &#x25BC;
+				.option-menu-holder
+					.option-menu-arrow
+					.option-menu
+						a(href='/order')
+							.option-menu-o(style='font-weight:bold') Order Gum
+						a(href='/subscriptions')
+							.option-menu-o Manage Orders
+						-if(udata.admin === true){
+							a(href='/admin')
+								.option-menu-o Administration Panel
+						-}
+						.option-menu-o Log Out
+	.index-1(style='text-align:left;')
+		.index-1-2
+			h1.nomar Yo! Here are your current subscriptions!
+			h2.nomar.normal We're still building this place, but you can cancel your subscriptions here.
+			-for(var i = 0; i < udata.orders.length; i++){
+				.order-box 
+					h1.nomar(style='color:black') Order !{udata.orders[i].id}
+					h2.nomar.normal(style='margin-bottom:5px;') You ordered the following:
+					-for(var x = 0; x < udata.orders[i].order.length; x++){
+						-if(udata.orders[i].order.length === 2){
+							z = '1 pack'
+						- } else {
+							z = '2 packs'
+						- }
+						.order-descriptions(style='margin-bottom:5px;')
+							| !{udata.orders[i].order[x].type}, !{udata.orders[i].order[x].brand}, !{udata.orders[i].order[x].flavor} (!{z})
+					-}
+					.order-cancel(data-position=i style='text-align: right; color: rgb(203, 73, 73); cursor:pointer;') Cancel Order
+			-}

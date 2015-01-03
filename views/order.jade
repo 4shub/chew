@@ -1,0 +1,73 @@
+extends layout
+
+block content
+	.content-container.ce
+		.order-header
+			a(href='/')
+				.order-logo
+		.header-user
+				div.header-username= udata.name 
+				img.header-userimage(src= udata.image ) 
+				div.hex-bottom  &#x25BC;
+				.option-menu-holder
+					.option-menu-arrow
+					.option-menu
+						a(href='/order')
+							.option-menu-o(style='font-weight:bold') Order Gum
+						a(href='/subscriptions')
+							.option-menu-o Manage Orders
+						-if(udata.admin === true){
+							a(href='/admin')
+								.option-menu-o Administration Panel
+						-}
+						.option-menu-o Log Out
+	.index-1(style='text-align:left;')
+		.index-1-2
+			h1.nomar Thanks for Joining
+			h2.nomar.normal First, we'll need some information on your gum preferences:
+			p.nomar
+				| We're sending you two packs of gum based on your preferences below. <br> You can't change them once you order.
+	.form
+		.form-1
+			.form-item
+				.form-desc What type of gum do you chew the most?
+				.form-options
+					| <d class='form-option option-type' >Fruity</d>
+					| <d class='form-option option-type' >Minty</d>
+					| <d class='form-option option-type' >Both</d>
+			.form-item.step2
+				.form-desc
+					| What type of brands do you enjoy? <br> (select up to two)
+				.form-options
+					-for(var i = 0; i < menu.length; i++){
+						| <div class='form-option option-brand opt-!{menu[i].type}' data-brand='!{menu[i].brand.replace(' ', '_')}_!{menu[i].type}'>!{menu[i].brand} </div>
+					-}
+			.form-item.step3
+				.form-desc
+					| Based on your reponses, here are the flavors we can send you: <br> (select up to two)
+				.form-options
+					- var z = 0;
+					-for(var i = 0; i < menu.length; i++){
+						-for(var j = 0; j < menu[i].flavors.length; j++){
+							| <div id='flavor_!{z}' data-count=0 class='form-option option-flavor opt-!{menu[i].brand.replace(' ', '_')}_!{menu[i].type}' data-flavor='!{menu[i].flavors[j]}' data-type='!{menu[i].type}' data-brand='!{menu[i].brand}'>!{menu[i].brand}, !{menu[i].flavors[j]} <a class='addx'>(0 packs)</a> </div>
+							- z++
+						-}
+					-}
+		.form.step4
+			.form-1
+				.form-item(style='padding-bottom:0px;')
+					h1.nomar Awesome
+					h2.nomar.normal Next we'll need your address and billing information to send you your gum:
+				.form-item(style='padding-top:20px; text-align:center')
+					input#name(type='text' style='width:300px' value=udata.name placeholder='Full Name')
+					br
+					input#address(type='text' style='width:300px' placeholder='Address')
+					br
+					input#state(type='text' style='width:135px' placeholder='State')
+					input#zip(type='text'  style='width:135px' placeholder='Zip Code')
+					br
+					input#purchase(style='margin-top: 30px;' type='button' value='Purchase')
+					br
+					br
+					| We start delivery on Novermber 1st
+			

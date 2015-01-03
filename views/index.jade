@@ -1,0 +1,49 @@
+extends layout
+
+block content
+	body(style='height:100%')
+		.section
+			.content-container
+				.index-header
+					-if(udata === undefined){
+						
+						a(href='/auth/twitter')
+							.index-login
+								input(type='button' value='Sign In')
+								div(style='margin-top:5px;') (with Twitter)
+					- } else {
+						.header-user
+							div.header-username= udata.name 
+							img.header-userimage(src= udata.image ) 
+							div.hex-bottom  &#x25BC;
+						.option-menu-holder
+							.option-menu-arrow
+							.option-menu
+								a(href='/order')
+									.option-menu-o(style='font-weight:bold') Order Gum
+								a(href='/subscriptions')
+									.option-menu-o Manage Orders
+								-if(udata.admin === true){
+									a(href='/admin')
+										.option-menu-o Administration Panel
+								-}
+								.option-menu-o Log Out
+					-}
+				.index-logo
+			.index-1(style='height:220px')
+				.index-1-1
+					h2 Never remember to buy gum again.
+					p We're Chew, a new way to get your weekly gum supply. Everyone chews gum, but often times we forget to buy any. We're stuck with bad breath. Now you don't have to remember, we'll send it to you weekly.
+		.section.bottom-section
+			.index-1(style='text-align:left')
+				.index-1-1(style='max-width:1200px;')
+					.index-split(style='width:75%; padding-top: 13%;')
+						h2(style='margin:0; color:white; ') 2 packs of gum a week, only $15 a month
+						p(style='color:white;') For $15 a month, we're going to send you your weekly gum supply, shipping and handling included. Chew learns your gum preferences so that you get exactly what you want each week.
+					.index-split(style='width:25%')
+						.index-15dollars /MONTH
+					.index-clear
+						a(href='/auth/twitter')
+							input(type='button' value='Sign Up Now With Twitter')
+		footer
+			a(target='_blank' href='https://twitter.com/trychew') @trychew 

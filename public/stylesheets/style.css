@@ -1,0 +1,323 @@
+html,body{
+	margin:0;
+	padding:0;
+	color:#9dabc0;
+	font: 20px/1.4 "Proxima Nova",Arial,Helvetica,sans-serif;
+	background:#ffffff;
+	height:100%;
+	width:100%;
+}
+
+h1{
+	font-size:24px;
+	font-weight:bold;
+	color:#f59da0;
+	font-family:"Nimbu Sans",Arial,Helvetica,sans-serif;
+}
+
+.normal{
+	font-weight:normal;
+}
+
+h2{
+	font-size:24px;
+	color:#78859b;
+}	
+
+h3{
+	font-size:22px;
+	color:#78859b;
+}
+
+h4{
+	font-size:22px;
+}
+
+
+header{
+	height:;
+	width:100%;
+	position:relative;
+	top:0;
+}
+
+input{
+	padding:10px;
+	border:1px solid #dcdcdc;
+	box-shadow:transparent;
+	border-radius:2px;
+	font-size:20px;
+	background:transparent;
+}
+
+.content-container{
+	max-width:1200px;
+	margin:0 auto;
+	position:relative;
+}
+
+input:focus{
+	border-color:#78859b;
+	
+}
+
+a{
+	text-decoration:none;
+}
+
+input[type='button']{
+	border:1px solid ;
+	border-radius:100px;
+	color:#f59da0;
+	font-size:15px;
+	cursor:pointer;
+	padding: 10px 30px;
+	text-transform:uppercase;
+}
+
+
+input[type='text']{
+	padding: 10px;
+border: 1px solid #dcdcdc;
+border-radius: 2px;
+font-size: 20px;
+background: none repeat scroll 0% 0% transparent;
+    margin: 10px 5px;
+}
+
+.index-login, .header-user{
+	position:absolute;
+	right:0;
+	top:100px;
+	cursor:pointer;
+}
+
+.index-login{
+text-align: center;
+color: grey;
+font-size: 10px;
+}
+
+.header-username{
+	float: left;
+margin: 10px 15px;
+}
+
+.option-menu-holder{
+position: absolute;
+right: 5px;
+top: 145px;
+}
+
+.ce .option-menu-holder{
+	top:45px
+}
+
+.section{
+	width:100%;
+	min-height:450px;
+	height:50%;
+	
+}
+
+.bottom-section{
+background:url('/img/pattern_chew.png') no-repeat scroll center center #f59da0;
+background-size:100% 100%;
+}
+
+.order-box{
+	background: none repeat scroll 0% 0% #FCFCFC;
+padding: 20px;
+border-bottom: 2px solid #EAEAEA;
+border-right: 1px solid #EAEAEA;
+clear: right;
+margin-top:20px;
+border-radius: 5px;
+
+}
+
+.index-15dollars{
+    background: url("/img/15.png") no-repeat scroll top center transparent;
+    height: 200px;
+    width: 200px;
+    margin-top: 40%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFF;
+    padding-top: 160px;
+    font-size: 25px;
+}
+
+footer{
+	padding: 20px;
+text-align: right;
+width:100%;
+font-weight:bold;
+box-sizing:border-box;
+text-transform:uppercase;
+font-size:14px;
+}
+
+footer a{
+	color:#9dabc0;
+	
+}
+
+.index-clear{
+	clear:both;
+	text-align:center;
+	padding-top:1%;
+}
+
+.index-clear input{
+	color:white;
+	font-weight:bold;
+	border-width:2px;
+}
+
+.option-menu-o{
+color: #5C5C5C;
+font-size: 15px;
+text-align: center;
+padding: 10px;
+width: 150px;
+}
+
+.index-split{
+	float:left;
+	height:350px;
+	box-sizing:border-box;
+	padding:0px 20px 0px ;
+}
+
+.option-menu-arrow{
+width: 0px;
+height: 0px;
+position: relative;
+float:right;
+border-left: 7px solid transparent;
+border-right: 7px solid transparent;
+border-bottom: 10px solid rgba(252, 252, 252, 1);
+}	
+
+.option-menu{
+	background:none repeat scroll 0% 0% rgba(252, 252, 252, 1);
+	padding:0px;
+	border-bottom:2px solid rgba(234, 234, 234, 1);
+	border-right:1px solid rgba(234, 234, 234, 1);
+	clear: right;
+	margin-right:-10px;
+	border-radius:5px;
+}
+
+.option-menu-holder{
+	display:none;
+}
+
+.hex-bottom{
+	font-size:15px;
+	float:left;
+	margin:14px 5px;
+}
+
+.header-userimage{
+	width:46px;
+	height:46px;
+	float:left;
+	border-radius:50px;
+}
+
+.nomar{
+	margin:0px;
+	padding:0px;
+}
+
+.index-1{
+	text-align:center;
+	width:100%;
+}
+
+.index-1-1{
+	max-width:800px;
+	margin:0 auto;
+}
+
+.index-1-2{
+	max-width:1200px;
+	margin:0 auto;
+}
+
+.form-1{
+	width:1000px;
+	margin:0 auto;
+}
+
+.form-item{
+	clear:both;
+	 padding: 70px 0;
+}
+
+d{
+	margin:0px 5px;
+}
+
+
+.form-option {
+     background: url('/img/unchecked.png') no-repeat scroll left center transparent;
+	 padding-left:30px;
+	cursor:pointer;
+ }
+ 
+ .option-brand, .option-flavor{
+	display:none;
+	float: left;
+	margin-right:10px;
+ }
+
+ 
+
+.form-desc{
+width:50%;
+float:left;
+}
+
+.form{
+    width: 100%;
+    margin: 70px auto;
+    border-top: 1px solid #F8F8F8;
+   
+}
+
+.step2{
+	display:none;
+}
+
+.step3{
+	display:none;
+}
+
+.step4{
+	display:none;
+}
+
+.form-options{
+width: 50%;
+float: right;
+}
+
+.index-logo{
+background: url('/img/logo.png') no-repeat scroll center center transparent;
+width: 200px;
+height: 200px;
+background-size: 200px;
+margin: 0 auto;
+padding-top: 40px;
+}
+
+.order-logo{
+background: url('/img/logo.png') no-repeat scroll center center transparent;
+width: 200px;
+height: 200px;
+padding-top:50px;
+background-size: 150px;
+}

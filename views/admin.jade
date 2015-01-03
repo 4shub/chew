@@ -1,0 +1,43 @@
+extends layout
+
+block content
+	.content-container.ce
+		.order-header
+			a(href='/')
+				.order-logo
+		.header-user
+				div.header-username= udata.name 
+				img.header-userimage(src= udata.image ) 
+				div.hex-bottom  &#x25BC;
+				.option-menu-holder
+					.option-menu-arrow
+					.option-menu
+						a(href='/order')
+							.option-menu-o(style='font-weight:bold') Order Gum
+						a(href='/subscriptions')
+							.option-menu-o Manage Orders
+						-if(udata.admin === true){
+							a(href='/admin')
+								.option-menu-o Administration Panel
+						-}
+						.option-menu-o Log Out
+	.index-1(style='text-align:left;')
+		.index-1-2
+			h1.nomar Admin Panel
+			-for(var y = 0; y < users.length; y++){
+				-for(var i = 0; i < users[y].orders.length; i++){
+					.order-box 
+						h1.nomar(style='color:black') For !{users[y].name} 
+						-for(var x = 0; x < users[y].orders[i].order.length; x++){
+							-if(users[y].orders[i].order.length === 2){
+								z = '1 pack'
+							- } else {
+								z = '2 packs'
+							- }
+							.order-descriptions(style='margin-bottom:5px;')
+								| !{users[y].orders[i].order[x].type}, !{users[y].orders[i].order[x].brand}, !{users[y].orders[i].order[x].flavor} (!{z})
+						-}
+						h1.nomar(style='color:black') Address
+						| !{users[y].location.address}, !{users[y].location.state}, !{users[y].location.zip}
+				-}
+			-}
